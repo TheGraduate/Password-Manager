@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/websiteListFragment">
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.passwordmanager.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/websiteListFragment"
+        android:name="com.example.passwordmanager.WebsiteListFragment"
+        android:label="WebsiteListFragment"
+        tools:layout="@layout/fragment_website_list" >
+        <action
+            android:id="@+id/action_websiteListFragment_to_websiteCreateFragment"
+            app:destination="@id/websiteCreateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/websiteCreateFragment"
+        android:name="com.example.passwordmanager.WebsiteCreateFragment"
+        android:label="fragment_website_create"
+        tools:layout="@layout/fragment_website_create" >
+        <action
+            android:id="@+id/action_websiteCreateFragment_to_websiteListFragment"
+            app:destination="@id/websiteListFragment" />
+    </fragment>
+</navigation>

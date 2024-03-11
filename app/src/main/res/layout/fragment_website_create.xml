@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Add your UI components for adding a new website -->
+
+    <EditText
+        android:id="@+id/enterWebsiteName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:hint="enter website name" />
+
+    <EditText
+        android:id="@+id/enterLogin"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/enterWebsiteName"
+        android:layout_marginTop="8dp"
+        android:hint="enter login" />
+
+    <!-- Add other input fields as needed -->
+
+    <EditText
+        android:id="@+id/enterPassword"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/enterURL"
+        android:layout_marginTop="8dp"
+        android:hint="enter password" />
+
+    <EditText
+        android:id="@+id/enterURL"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/enterDescription"
+        android:layout_marginTop="8dp"
+        android:hint="enter URL" />
+
+    <EditText
+        android:id="@+id/enterDescription"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/enterLogin"
+        android:layout_marginTop="8dp"
+        android:hint="enter description" />
+
+    <Button
+        android:id="@+id/buttonAddWebsite"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/enterPassword"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="420dp"
+        android:layout_marginBottom="20dp"
+        android:text="Add Website" />
+</RelativeLayout>
