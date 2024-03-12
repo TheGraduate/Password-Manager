@@ -13,5 +13,8 @@
     <string name="enter_description">enter description</string>
     <string name="add_website">Add Website</string>
 
+    <string name="menu_edit">Edit</string>
+    <string name="menu_remove">Remove</string>
+
 
 </resources>

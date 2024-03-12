@@ -12,33 +12,42 @@ import com.example.passwordmanager.R
 import com.example.passwordmanager.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //val actionBar = supportActionBar////
+        //actionBar?.setDisplayShowTitleEnabled(true)///
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.includeCustomToolbar.toolbar)
+
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
-
-
+        appBarConfiguration = AppBarConfiguration(navController.graph)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-
-        menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.options_for_website_card, menu)
 
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_settings -> true
+            android.R.id.home -> {
+                val actionBar = supportActionBar
+                actionBar?.setDisplayHomeAsUpEnabled(false)
+                findNavController(R.id.nav_host_fragment).navigateUp()
+                return true
+            }
+            R.id.edit -> true
+            R.id.remove -> true
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -48,4 +57,13 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
+
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        val actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(false)
+        super.onBackPressed()
+    }
+
+
 }

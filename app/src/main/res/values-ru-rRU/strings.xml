@@ -12,4 +12,7 @@
     <string name="enter_description">введите описание</string>
     <string name="add_website">Добавить сайт</string>
 
+    <string name="menu_edit">Редактировать</string>
+    <string name="menu_remove">Удалить</string>
+
 </resources>
