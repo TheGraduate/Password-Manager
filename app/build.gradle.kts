@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -48,6 +49,11 @@ dependencies {
     implementation(libs.firebase.crashlytics.buildtools)
     annotationProcessor (libs.compiler)
     implementation (libs.gson)
+    implementation (libs.kotlinx.coroutines.core)
+    implementation (libs.jsoup)
+    implementation (libs.androidsvg)
+
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

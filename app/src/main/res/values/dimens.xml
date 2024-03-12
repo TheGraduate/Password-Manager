@@ -1,4 +1,7 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="height_enter_field">40dp</dimen>
+    <dimen name="margin_top_enter_field">8dp</dimen>
+    <dimen name="height_create_website_button">40dp</dimen>
 </resources>

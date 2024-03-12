@@ -1,4 +1,4 @@
-package com.example.passwordmanager
+package com.example.passwordmanager.dto
 
 import java.util.Date
 
@@ -10,5 +10,5 @@ data class Website(
     val dateOfAdding: String,
     val description: String,
     val url: String,
-    val iconURL: String,
+    //val iconURL: String = url + "/favicon.ico"
 )

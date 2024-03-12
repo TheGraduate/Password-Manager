@@ -1,13 +1,12 @@
-package com.example.passwordmanager
+package com.example.passwordmanager.repository
 
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.passwordmanager.dto.Website
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-
-import java.io.IOException
 
 class WebsiteRepositorySharedPrefsImpl(
     context: Context,

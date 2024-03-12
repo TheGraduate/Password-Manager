@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Password Manager</string>
+    <string name="action_settings">Settings</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+
+    <string name="enter_website_name">введите имя сайта</string>
+    <string name="enter_login">введите логин</string>
+    <string name="enter_password">введите пароль</string>
+    <string name="enter_url">введите URL</string>
+    <string name="enter_description">введите описание</string>
+    <string name="add_website">Добавить сайт</string>
+
+</resources>

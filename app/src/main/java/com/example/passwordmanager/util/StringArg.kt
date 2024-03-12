@@ -1,4 +1,4 @@
-package com.example.passwordmanager
+package com.example.passwordmanager.util
 
 import android.os.Bundle
 import kotlin.properties.ReadWriteProperty

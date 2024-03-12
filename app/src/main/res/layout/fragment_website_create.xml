@@ -3,59 +3,75 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
-
-    <!-- Add your UI components for adding a new website -->
+    android:padding="16dp"
+    android:background="@color/background">
 
     <EditText
         android:id="@+id/enterWebsiteName"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/height_enter_field"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="8dp"
-        android:hint="enter website name" />
+        android:layout_marginTop= "@dimen/margin_top_enter_field"
+        android:hint="@string/enter_website_name"
+        android:autofillHints=""/>
 
     <EditText
         android:id="@+id/enterLogin"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/height_enter_field"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:layout_below="@+id/enterWebsiteName"
-        android:layout_marginTop="8dp"
-        android:hint="enter login" />
+        android:layout_marginTop="@dimen/margin_top_enter_field"
+        android:hint="@string/enter_login"
+        android:autofillHints="" />
 
     <!-- Add other input fields as needed -->
 
     <EditText
         android:id="@+id/enterPassword"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/height_enter_field"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:layout_below="@+id/enterURL"
-        android:layout_marginTop="8dp"
-        android:hint="enter password" />
+        android:layout_marginTop="@dimen/margin_top_enter_field"
+        android:hint="@string/enter_password"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/enterURL"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/height_enter_field"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:layout_below="@+id/enterDescription"
-        android:layout_marginTop="8dp"
-        android:hint="enter URL" />
+        android:layout_marginTop="@dimen/margin_top_enter_field"
+        android:hint="@string/enter_url"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/enterDescription"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/height_enter_field"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:layout_below="@+id/enterLogin"
-        android:layout_marginTop="8dp"
-        android:hint="enter description" />
+        android:layout_marginTop="@dimen/margin_top_enter_field"
+        android:hint="@string/enter_description"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/buttonAddWebsite"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/height_create_website_button"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:layout_below="@+id/enterPassword"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="380dp"
         android:layout_marginBottom="20dp"
-        android:text="Add Website" />
+        android:text="@string/add_website" />
 </RelativeLayout>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+   <!-- Your Website Details UI Elements -->
+
+   <!-- Bottom Action Buttons -->
+
+   <TextView
+       android:id="@+id/UsersWebsiteName"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="4dp"
+       android:ems="10"
+       android:inputType=""
+       android:text=""
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/WebsiteLoginTitle"
+       app:layout_constraintEnd_toEndOf="@+id/WebsiteNameTitle"
+       app:layout_constraintStart_toStartOf="@+id/WebsiteNameTitle"
+       app:layout_constraintTop_toBottomOf="@+id/WebsiteNameTitle" />
+
+   <TextView
+       android:id="@+id/UsersWebsiteLogin"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="4dp"
+       android:ems="10"
+       android:inputType=""
+       android:text=""
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/WebsitePasswordTitle"
+       app:layout_constraintEnd_toEndOf="@+id/WebsiteLoginTitle"
+       app:layout_constraintStart_toStartOf="@+id/WebsiteLoginTitle"
+       app:layout_constraintTop_toBottomOf="@+id/WebsiteLoginTitle" />
+
+   <TextView
+       android:id="@+id/UsersWebsitePassword"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="4dp"
+       android:ems="10"
+       android:inputType=""
+       android:text=""
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/WebsiteURLTitle"
+       app:layout_constraintEnd_toEndOf="@+id/WebsitePasswordTitle"
+       app:layout_constraintStart_toStartOf="@+id/WebsitePasswordTitle"
+       app:layout_constraintTop_toBottomOf="@+id/WebsitePasswordTitle" />
+
+   <TextView
+       android:id="@+id/UsersWebsiteURL"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="4dp"
+       android:autoLink="web"
+       android:ems="10"
+       android:inputType=""
+       android:text=""
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/WebsiteDescriptionTitle"
+       app:layout_constraintEnd_toEndOf="@+id/WebsiteURLTitle"
+       app:layout_constraintStart_toStartOf="@+id/WebsiteURLTitle"
+       app:layout_constraintTop_toBottomOf="@+id/WebsiteURLTitle" />
+
+   <TextView
+       android:id="@+id/UsersWebsiteDescription"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="4dp"
+       android:ems="10"
+       android:inputType=""
+       android:text=""
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/buttonCopyPassword"
+       app:layout_constraintEnd_toEndOf="@+id/WebsiteDescriptionTitle"
+       app:layout_constraintStart_toStartOf="@+id/WebsiteDescriptionTitle"
+       app:layout_constraintTop_toBottomOf="@+id/WebsiteDescriptionTitle" />
+
+   <TextView
+       android:id="@+id/WebsiteNameTitle"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="8dp"
+       android:layout_marginEnd="8dp"
+       android:text="Website"
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteName"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.04000002"
+       app:layout_constraintVertical_chainStyle="packed" />
+
+   <TextView
+       android:id="@+id/WebsiteLoginTitle"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="8dp"
+       android:text="Login"
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteLogin"
+       app:layout_constraintEnd_toEndOf="@+id/UsersWebsiteName"
+       app:layout_constraintStart_toStartOf="@+id/UsersWebsiteName"
+       app:layout_constraintTop_toBottomOf="@+id/UsersWebsiteName" />
+
+
+   <TextView
+       android:id="@+id/WebsitePasswordTitle"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="8dp"
+       android:text="Password"
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/UsersWebsitePassword"
+       app:layout_constraintEnd_toEndOf="@+id/UsersWebsiteLogin"
+       app:layout_constraintStart_toStartOf="@+id/UsersWebsiteLogin"
+       app:layout_constraintTop_toBottomOf="@+id/UsersWebsiteLogin" />
+
+   <TextView
+       android:id="@+id/WebsiteURLTitle"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="8dp"
+       android:text="URL"
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteURL"
+       app:layout_constraintEnd_toEndOf="@+id/UsersWebsitePassword"
+       app:layout_constraintStart_toStartOf="@+id/UsersWebsitePassword"
+       app:layout_constraintTop_toBottomOf="@+id/UsersWebsitePassword" />
+
+   <TextView
+       android:id="@+id/WebsiteDescriptionTitle"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="8dp"
+       android:text="Description"
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteDescription"
+       app:layout_constraintEnd_toEndOf="@+id/UsersWebsiteURL"
+       app:layout_constraintStart_toStartOf="@+id/UsersWebsiteURL"
+       app:layout_constraintTop_toBottomOf="@+id/UsersWebsiteURL" />
+
+   <androidx.constraintlayout.widget.Group
+       android:id="@+id/group"
+       android:layout_width="409dp"
+       android:layout_height="128dp"
+       app:constraint_referenced_ids="buttonCopyPassword,buttonCopyLogin,buttonOpenLink"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintStart_toStartOf="parent" />
+
+   <Button
+       android:id="@+id/buttonCopyPassword"
+       android:layout_width="120dp"
+       android:layout_height="64dp"
+       android:layout_marginEnd="8dp"
+       android:layout_marginBottom="32dp"
+       android:backgroundTint="@color/toolbarFontColor"
+       android:text="Copy Password"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toStartOf="@+id/buttonOpenLink"
+       app:layout_constraintHorizontal_weight="1"
+       app:layout_constraintStart_toEndOf="@id/buttonCopyLogin" />
+
+   <Button
+       android:id="@+id/buttonCopyLogin"
+       android:layout_width="120dp"
+       android:layout_height="64dp"
+       android:layout_marginEnd="8dp"
+       android:layout_marginBottom="32dp"
+       android:backgroundTint="@color/toolbarFontColor"
+       android:text="Copy Login"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toStartOf="@id/buttonCopyPassword"
+       app:layout_constraintHorizontal_weight="1"
+       app:layout_constraintStart_toStartOf="parent" />
+
+   <Button
+       android:id="@+id/buttonOpenLink"
+       android:layout_width="120dp"
+       android:layout_height="64dp"
+       android:layout_marginBottom="32dp"
+       android:backgroundTint="@color/toolbarFontColor"
+       android:text="Open the website"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
