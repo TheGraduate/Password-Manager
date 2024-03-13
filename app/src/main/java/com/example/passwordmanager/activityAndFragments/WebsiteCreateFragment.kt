@@ -34,6 +34,7 @@ class WebsiteCreateFragment : Fragment() {
     ): View {
         _binding = FragmentWebsiteCreateBinding.inflate(inflater, container, false)
 
+        val actionBar = (requireActivity() as MainActivity).supportActionBar
 
         binding.buttonAddWebsite.setOnClickListener {
             viewModel.changeWebsiteName(binding.enterWebsiteName.text.toString())
@@ -44,6 +45,9 @@ class WebsiteCreateFragment : Fragment() {
             viewModel.save()
             AndroidUtils.hideKeyboard(requireView())
             findNavController().navigateUp()
+
+
+            actionBar?.setDisplayHomeAsUpEnabled(false)
             //val actionBar = (requireActivity() as AppCompatActivity).supportActionBar
             //actionBar?.setDisplayHomeAsUpEnabled(false)
         }

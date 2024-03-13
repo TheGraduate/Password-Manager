@@ -21,7 +21,7 @@ private val empty = Website(
 class WebsiteViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: WebsiteRepository = WebsiteRepositorySharedPrefsImpl(application)
     val data = repository.getAll()
-    private val edited = MutableLiveData(empty)
+    val edited = MutableLiveData(empty)
 
     fun save() {
         edited.value?.let {

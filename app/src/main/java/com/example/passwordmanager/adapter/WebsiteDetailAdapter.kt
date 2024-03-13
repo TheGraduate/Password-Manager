@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import android.graphics.drawable.PictureDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -86,6 +87,27 @@ class WebsiteDetailAdapter(
                 binding.UsersWebsitePassword.text = website.password
                 binding.UsersWebsiteURL.text = website.url
                 binding.UsersWebsiteDescription.text = website.description
+
+                iconImageWebsiteMenuOnWebsiteFragment.setOnClickListener {
+                    PopupMenu(it.context, it).apply {
+                        inflate(R.menu.options_for_website_card)
+                        setOnMenuItemClickListener { item ->
+                            when (item.itemId) {
+                                R.id.remove -> {
+                                    onInteractionListener.onRemove(website)
+                                    true
+                                }
+                                R.id.edit -> {
+                                    onInteractionListener.onEdit(website)
+                                    true
+                                }
+
+                                else -> false
+                            }
+                        }
+                    }.show()
+                }
+
             }
         }
     }

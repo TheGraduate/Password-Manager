@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_websiteListFragment_to_websiteFragment"
             app:destination="@id/websiteFragment" />
+        <action
+            android:id="@+id/action_websiteListFragment_to_websiteEditFragment"
+            app:destination="@id/websiteEditFragment" />
     </fragment>
     <fragment
         android:id="@+id/websiteCreateFragment"
@@ -41,5 +44,23 @@
         <action
             android:id="@+id/action_websiteFragment_to_websiteListFragment"
             app:destination="@id/websiteListFragment" />
+        <action
+            android:id="@+id/action_websiteFragment_to_websiteEditFragment"
+            app:destination="@id/websiteEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/websiteEditFragment"
+        android:name="com.example.passwordmanager.activityAndFragments.WebsiteEditFragment"
+        android:label="WebsiteEditFragment"
+        tools:layout="@layout/website_edit_fragment">
+        <action
+            android:id="@+id/action_websiteEditFragment_to_websiteFragment"
+            app:destination="@id/websiteFragment" />
+        <action
+            android:id="@+id/action_websiteEditFragment_to_websiteListFragment"
+            app:destination="@id/websiteListFragment" />
+        <argument
+            android:name="website"
+            app:argType="com.example.passwordmanager.dto.Website" />
     </fragment>
 </navigation>

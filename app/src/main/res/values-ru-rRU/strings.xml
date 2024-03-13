@@ -14,5 +14,9 @@
 
     <string name="menu_edit">Редактировать</string>
     <string name="menu_remove">Удалить</string>
+    <string name="edit_website">Изменить</string>
+
+    <string name="login_copied_to_clipboard">Логин скопирован</string>
+    <string name="password_copied_to_clipboard">Пароль скопирован</string>
 
 </resources>

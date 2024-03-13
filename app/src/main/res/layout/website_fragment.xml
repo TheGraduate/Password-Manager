@@ -10,6 +10,20 @@
 
    <!-- Bottom Action Buttons -->
 
+   <com.google.android.material.button.MaterialButton
+       android:id="@+id/iconImageWebsiteMenuOnWebsiteFragment"
+       android:layout_width="52dp"
+       android:layout_height="52dp"
+       android:layout_marginTop="8dp"
+       android:layout_marginEnd="8dp"
+       android:layout_marginBottom="7dp"
+       android:background="@android:color/transparent"
+       android:src="@drawable/ic_more_vert_24"
+       app:icon="@drawable/ic_more_vert_24"
+       app:layout_constraintBottom_toTopOf="@+id/WebsiteNameTitle"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
    <TextView
        android:id="@+id/UsersWebsiteName"
        android:layout_width="0dp"
@@ -86,12 +100,13 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginStart="8dp"
+       android:layout_marginTop="54dp"
        android:layout_marginEnd="8dp"
        android:text="Website"
        android:textColor="@color/white"
        app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteName"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintHorizontal_bias="0.0"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
        app:layout_constraintVertical_bias="0.04000002"
@@ -150,7 +165,7 @@
        android:id="@+id/group"
        android:layout_width="409dp"
        android:layout_height="128dp"
-       app:constraint_referenced_ids="buttonCopyPassword,buttonCopyLogin,buttonOpenLink"
+       app:constraint_referenced_ids="buttonCopyPassword,buttonCopyLogin"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.5"
@@ -160,12 +175,11 @@
        android:id="@+id/buttonCopyPassword"
        android:layout_width="120dp"
        android:layout_height="64dp"
-       android:layout_marginEnd="8dp"
        android:layout_marginBottom="32dp"
        android:backgroundTint="@color/toolbarFontColor"
        android:text="Copy Password"
        app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toStartOf="@+id/buttonOpenLink"
+       app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_weight="1"
        app:layout_constraintStart_toEndOf="@id/buttonCopyLogin" />
 
@@ -181,16 +195,6 @@
        app:layout_constraintEnd_toStartOf="@id/buttonCopyPassword"
        app:layout_constraintHorizontal_weight="1"
        app:layout_constraintStart_toStartOf="parent" />
-
-   <Button
-       android:id="@+id/buttonOpenLink"
-       android:layout_width="120dp"
-       android:layout_height="64dp"
-       android:layout_marginBottom="32dp"
-       android:backgroundTint="@color/toolbarFontColor"
-       android:text="Open the website"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

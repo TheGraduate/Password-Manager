@@ -15,6 +15,10 @@
 
     <string name="menu_edit">Edit</string>
     <string name="menu_remove">Remove</string>
+    <string name="edit_website">Edit website</string>
+
+    <string name="login_copied_to_clipboard">Login copied to clipboard</string>
+    <string name="password_copied_to_clipboard">Password copied to clipboard</string>
 
 
 </resources>

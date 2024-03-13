@@ -32,11 +32,11 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+  /*  override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.options_for_website_card, menu)
 
         return true
-    }
+    }*/
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity() {
                 findNavController(R.id.nav_host_fragment).navigateUp()
                 return true
             }
-            R.id.edit -> true
-            R.id.remove -> true
+            //R.id.edit -> true
+            //R.id.remove -> true
             else -> super.onOptionsItemSelected(item)
         }
     }

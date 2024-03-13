@@ -1,11 +1,15 @@
 package com.example.passwordmanager.activityAndFragments
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -57,20 +61,32 @@ class WebsiteFragment: Fragment() {
             viewHolder.bind(website)
         }
 
-        /*viewModel.edited.observe(viewLifecycleOwner) {
+        viewModel.edited.observe(viewLifecycleOwner) {
             if (it.id == 0L) {
                 return@observe
-            }// todo переход от карточки сайта к редактированию
+            }
 
-            val sendPostText = Bundle()
-            sendPostText.putString(Intent.EXTRA_TEXT, it.content)
-            val actionBar = (requireActivity() as AppCompatActivity).supportActionBar
-            actionBar?.setDisplayHomeAsUpEnabled(false)
-            findNavController().navigate(R.id.action_postFragment_to_editPostFragment, sendPostText)
-        }*/
+            val action = WebsiteFragmentDirections.actionWebsiteFragmentToWebsiteEditFragment (website = it)
+            findNavController().navigate(action)
+        }
 
+        binding.buttonCopyLogin.setOnClickListener {
+            val textToCopy = viewModel.data.value?.find { it.id == args.id }?.login?: return@setOnClickListener
+            val context = requireContext()
+            val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("Label", textToCopy)
+            clipboard.setPrimaryClip(clip)
+            Toast.makeText(context, getString(R.string.login_copied_to_clipboard), Toast.LENGTH_SHORT).show()
+        }
 
-
+        binding.buttonCopyPassword.setOnClickListener {
+            val textToCopy = viewModel.data.value?.find { it.id == args.id }?.password?: return@setOnClickListener
+            val context = requireContext()
+            val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("Label", textToCopy)
+            clipboard.setPrimaryClip(clip)
+            Toast.makeText(context, getString(R.string.password_copied_to_clipboard), Toast.LENGTH_SHORT).show()
+        }
 
         return binding.root
     }

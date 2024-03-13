@@ -1,5 +1,6 @@
 package com.example.passwordmanager.activityAndFragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -48,6 +49,17 @@ class WebsiteListFragment : Fragment() {
             //requireParentFragment().findNavController().navigate(action)
         }
 
+        viewModel.edited.observe(viewLifecycleOwner) {
+            if (it.id == 0L) {
+                return@observe
+            }
+
+            val action = WebsiteListFragmentDirections.actionWebsiteListFragmentToWebsiteEditFragment(website = it)
+            findNavController().navigate(action)
+
+            //findNavController().navigate(R.id.action_postFragment_to_editPostFragment, sendPostText)
+        }
+
         return binding.root
     }
 
@@ -83,6 +95,8 @@ class WebsiteListFragment : Fragment() {
         viewModel.data.observe(viewLifecycleOwner) { websites ->
             adapter.submitList(websites)
         }
+
+
 
         //adapter.submitList(itemList)
     }
