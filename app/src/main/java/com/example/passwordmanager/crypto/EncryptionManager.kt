@@ -14,14 +14,14 @@ import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
 import javax.crypto.spec.IvParameterSpec
 
-/*
-class EncryptionManager(private val context: Context) {
+
+class EncryptionManager() {
 
     companion object {
         private const val ANDROID_KEY_STORE = "AndroidKeyStore"
         private const val TRANSFORMATION = "AES/CBC/PKCS7Padding"
         private const val KEY_ALIAS = "key_alias"
-        private const val IV_SIZE = 16 // Размер вектора инициализации
+        private const val IV_SIZE = 16
     }
 
     init {
@@ -30,7 +30,7 @@ class EncryptionManager(private val context: Context) {
 
     fun encryptData(data: ByteArray): ByteArray {
         val cipher = getCipher(Cipher.ENCRYPT_MODE)
-        val iv = cipher.iv
+        val iv = cipher.iv // Получаем IV после инициализации шифрования
         val outputStream = ByteArrayOutputStream()
         val cipherOutputStream = CipherOutputStream(outputStream, cipher)
         cipherOutputStream.write(data)
@@ -39,22 +39,13 @@ class EncryptionManager(private val context: Context) {
     }
 
     fun decryptData(data: ByteArray): ByteArray {
-       */
-/* val iv = encryptedData.copyOfRange(0, IV_SIZE) // Получаем IV из зашифрованных данных
-        val cipher = getCipher(Cipher.DECRYPT_MODE, iv)
-        val inputStream = ByteArrayInputStream(encryptedData, IV_SIZE, encryptedData.size - IV_SIZE)
+        val iv = data.copyOfRange(0, IV_SIZE) // Получаем IV из зашифрованных данных
+        val cipher = getCipher(Cipher.DECRYPT_MODE, iv) // Передаем IV при инициализации шифра
+        val inputStream = ByteArrayInputStream(data, IV_SIZE, data.size - IV_SIZE)
         val cipherInputStream = CipherInputStream(inputStream, cipher)
         val buffer = ByteArrayOutputStream()
         cipherInputStream.copyTo(buffer)
-        return buffer.toByteArray()*//*
-
-        val cipher = getCipher(Cipher.ENCRYPT_MODE)
-        val iv = cipher.iv // Получаем IV, сгенерированный внутри getCipher
-        val outputStream = ByteArrayOutputStream()
-        val cipherOutputStream = CipherOutputStream(outputStream, cipher)
-        cipherOutputStream.write(data)
-        cipherOutputStream.close()
-        return iv + outputStream.toByteArray() // При
+        return buffer.toByteArray()
     }
 
     private fun getCipher(mode: Int, iv: ByteArray? = null): Cipher {
@@ -62,13 +53,10 @@ class EncryptionManager(private val context: Context) {
         keyStore.load(null)
         val key = keyStore.getKey(KEY_ALIAS, null) as SecretKey
         val cipher = Cipher.getInstance(TRANSFORMATION)
-        if (mode == Cipher.ENCRYPT_MODE) {
-            val secureRandom = SecureRandom()
-            val ivParameterSpec = ByteArray(IV_SIZE)
-            secureRandom.nextBytes(ivParameterSpec)
-            cipher.init(mode, key, IvParameterSpec(ivParameterSpec))
+        if (iv != null) {
+            cipher.init(mode, key, IvParameterSpec(iv)) // Передаем IV при инициализации шифра
         } else {
-            cipher.init(mode, key, IvParameterSpec(iv))
+            cipher.init(mode, key)
         }
         return cipher
     }
@@ -93,4 +81,4 @@ class EncryptionManager(private val context: Context) {
         keyStore.load(null)
         return keyStore.containsAlias(KEY_ALIAS)
     }
-}*/
+}

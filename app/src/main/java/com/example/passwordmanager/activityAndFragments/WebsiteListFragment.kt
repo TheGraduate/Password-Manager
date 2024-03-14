@@ -14,11 +14,13 @@ import com.example.passwordmanager.adapter.OnInteractionListenerWebsites
 import com.example.passwordmanager.R
 import com.example.passwordmanager.dto.Website
 import com.example.passwordmanager.adapter.WebsiteAdapter
+import com.example.passwordmanager.crypto.EncryptionManager
 import com.example.passwordmanager.viewModel.WebsiteViewModel
 import com.example.passwordmanager.databinding.FragmentWebsiteListBinding
 
 
-class WebsiteListFragment : Fragment() {
+class WebsiteListFragment (
+) : Fragment() {
 
     private val viewModel: WebsiteViewModel by viewModels(
         ownerProducer = ::requireParentFragment

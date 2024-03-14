@@ -43,7 +43,11 @@ dependencies {
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.cardview)
     implementation(libs.picasso)
-    implementation(libs.androidx.biometric)
+
+    //implementation(libs.androidx.biometric)
+    implementation (libs.androidx.biometric.v110)
+    implementation(libs.androidx.biometric.v120alpha05)
+
     implementation (libs.androidx.security.crypto)
     implementation (libs.glide)
     implementation(libs.firebase.crashlytics.buildtools)

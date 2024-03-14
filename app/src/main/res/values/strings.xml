@@ -20,5 +20,11 @@
     <string name="login_copied_to_clipboard">Login copied to clipboard</string>
     <string name="password_copied_to_clipboard">Password copied to clipboard</string>
 
+    <string name="website_title">Website</string>
+    <string name="login_title">Login</string>
+    <string name="password_title">Password</string>
+    <string name="url_title">URL</string>
+    <string name="description_title">Description</string>
+
 
 </resources>

@@ -5,6 +5,7 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
@@ -21,12 +22,14 @@ import com.example.passwordmanager.R
 import com.example.passwordmanager.adapter.OnInteractionListenerWebsites
 import com.example.passwordmanager.adapter.WebsiteAdapter
 import com.example.passwordmanager.adapter.WebsiteDetailAdapter
+import com.example.passwordmanager.crypto.EncryptionManager
 import com.example.passwordmanager.databinding.WebsiteFragmentBinding
 import com.example.passwordmanager.dto.Website
 import com.example.passwordmanager.viewModel.WebsiteViewModel
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.util.Args
 
 class WebsiteFragment: Fragment() {
+    private val encryptionManager: EncryptionManager = EncryptionManager()
 
     private val viewModel: WebsiteViewModel by viewModels(
         ownerProducer = ::requireParentFragment
@@ -34,13 +37,12 @@ class WebsiteFragment: Fragment() {
 
     private val args by navArgs<WebsiteFragmentArgs>()
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val binding = WebsiteFragmentBinding.inflate(inflater, container, false)
 
         val viewHolder = WebsiteDetailAdapter.WebsiteDetailViewHolder(binding, object : OnInteractionListenerWebsites {

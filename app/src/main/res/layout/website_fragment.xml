@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/background">
 
-   <!-- Your Website Details UI Elements -->
-
-   <!-- Bottom Action Buttons -->
-
    <com.google.android.material.button.MaterialButton
        android:id="@+id/iconImageWebsiteMenuOnWebsiteFragment"
        android:layout_width="52dp"
@@ -102,7 +98,8 @@
        android:layout_marginStart="8dp"
        android:layout_marginTop="54dp"
        android:layout_marginEnd="8dp"
-       android:text="Website"
+       android:text="@string/website_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteName"
        app:layout_constraintEnd_toEndOf="parent"
@@ -117,7 +114,8 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="Login"
+       android:text="@string/login_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteLogin"
        app:layout_constraintEnd_toEndOf="@+id/UsersWebsiteName"
@@ -130,7 +128,8 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="Password"
+       android:text="@string/password_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintBottom_toTopOf="@+id/UsersWebsitePassword"
        app:layout_constraintEnd_toEndOf="@+id/UsersWebsiteLogin"
@@ -142,7 +141,8 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="URL"
+       android:text="@string/url_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteURL"
        app:layout_constraintEnd_toEndOf="@+id/UsersWebsitePassword"
@@ -154,7 +154,8 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="Description"
+       android:text="@string/description_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteDescription"
        app:layout_constraintEnd_toEndOf="@+id/UsersWebsiteURL"
@@ -176,7 +177,7 @@
        android:layout_width="120dp"
        android:layout_height="64dp"
        android:layout_marginBottom="32dp"
-       android:backgroundTint="@color/toolbarFontColor"
+
        android:text="Copy Password"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
@@ -189,7 +190,7 @@
        android:layout_height="64dp"
        android:layout_marginEnd="8dp"
        android:layout_marginBottom="32dp"
-       android:backgroundTint="@color/toolbarFontColor"
+
        android:text="Copy Login"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toStartOf="@id/buttonCopyPassword"

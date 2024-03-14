@@ -19,4 +19,10 @@
     <string name="login_copied_to_clipboard">Логин скопирован</string>
     <string name="password_copied_to_clipboard">Пароль скопирован</string>
 
+    <string name="website_title">Сайт</string>
+    <string name="login_title">Логин</string>
+    <string name="password_title">Пароль</string>
+    <string name="url_title">URL</string>
+    <string name="description_title">Описание</string>
+
 </resources>
