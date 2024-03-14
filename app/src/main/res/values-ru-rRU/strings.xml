@@ -31,6 +31,16 @@
     <string name="use_your_fingerprint_to_log_in">Используйте отпечаток пальца для входа</string>
     <string name="biometric_dialog_cancel">Отмена</string>
     <string name="log_in_by_biometrically_button_text">Вход по отпечатку пальца</string>
+
     <string name="log_in_by_pass_button_text">Вход по паролю</string>
+    <string name="enter_the_pass_title">Введите пароль:</string>
+    <string name="pass_hint">Пароль</string>
+    <string name="confirm_the_pass_button_text">Подтвердить</string>
+
+    <string name="edit_website_name">название</string>
+    <string name="edit_website_login">логин</string>
+    <string name="edit_website_pass">пароль</string>
+    <string name="edit_website_url">url</string>
+    <string name="edit_website_description">описание</string>
 
 </resources>

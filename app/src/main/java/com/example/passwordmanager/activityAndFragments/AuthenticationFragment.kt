@@ -5,6 +5,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,9 +18,22 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.passwordmanager.R
+import com.example.passwordmanager.crypto.EncryptionManager
+
+/*val sharedPreferences1 = context?.getSharedPreferences("my_prefs2", Context.MODE_PRIVATE)
+val editor = sharedPreferences1?.edit()
+val myString = binding.text.text.toString()
+val encryptedData = encryptionManager.encryptData(myString.toByteArray(Charsets.UTF_8))
+editor?.putString("my_key2", Base64.encodeToString(encryptedData, Base64.DEFAULT))
+editor?.apply()
+val myString2 = sharedPreferences1?.getString("my_key2", "")
+val encryptedDataFromSharedPrefs = Base64.decode(myString2, Base64.DEFAULT)
+val decryptedData = encryptedDataFromSharedPrefs?.let { encryptionManager.decryptData(it) }
+binding.text.text = decryptedData?.toString(Charsets.UTF_8)*/
 
 class AuthenticationFragment : Fragment() {
 
+    private val encryptionManager: EncryptionManager = EncryptionManager()
     private lateinit var biometricPrompt: BiometricPrompt
     private lateinit var promptInfo: BiometricPrompt.PromptInfo
     private var firstTimeLogin: Boolean
@@ -71,7 +85,6 @@ class AuthenticationFragment : Fragment() {
         confirmButton.setOnClickListener {
 
             val passwordInput = dialogView.findViewById<EditText>(R.id.password_input).text.toString()
-            val savedPassword = getSavedPassword()
 
             if (firstTimeLogin) {
                 savePassword(passwordInput)
@@ -79,6 +92,7 @@ class AuthenticationFragment : Fragment() {
                 showToast(getString(R.string.password_saved))
                 navigateToMainScreen()
             } else {
+                val savedPassword = getSavedPassword()
                 if (passwordInput == savedPassword) {
                     navigateToMainScreen()
                 } else {
@@ -92,13 +106,16 @@ class AuthenticationFragment : Fragment() {
 
     private fun getSavedPassword(): String? {
         val sharedPreferences = requireContext().getSharedPreferences("password_prefs", Context.MODE_PRIVATE)
-        return sharedPreferences.getString("password", null)
+        val encryptedDataFromSharedPrefs = Base64.decode(sharedPreferences.getString("password", null), Base64.DEFAULT)
+        val decryptedData = encryptedDataFromSharedPrefs?.let { encryptionManager.decryptData(it) }
+        return decryptedData?.toString(Charsets.UTF_8)
     }
 
     private fun savePassword(password: String) {
         val sharedPreferences = requireContext().getSharedPreferences("password_prefs", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-        editor.putString("password", password)
+        val encryptedDataToSharedPrefs = encryptionManager.encryptData(password.toByteArray(Charsets.UTF_8))
+        editor.putString("password", Base64.encodeToString(encryptedDataToSharedPrefs, Base64.DEFAULT))
         editor.apply()
     }
 

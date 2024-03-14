@@ -10,68 +10,106 @@
         android:id="@+id/enterWebsiteName"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_enter_field"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop= "@dimen/margin_top_enter_field"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/margin_top_enter_field"
+        android:layout_marginEnd="16dp"
+        android:inputType="text"
+        android:autofillHints="username"
         android:hint="@string/enter_website_name"
-        android:autofillHints=""/>
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/enterLogin"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_enter_field"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
         android:layout_below="@+id/enterWebsiteName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="@dimen/margin_top_enter_field"
+        android:layout_marginEnd="16dp"
+        android:inputType="text"
+        android:autofillHints="emailAddress"
         android:hint="@string/enter_login"
-        android:autofillHints="" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
-    <!-- Add other input fields as needed -->
+    <CheckBox
+        android:id="@+id/showPasswordCheckBox"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enterLogin"
+        android:layout_alignBottom="@+id/enterPassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="305dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="4dp" />
 
     <EditText
         android:id="@+id/enterPassword"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_enter_field"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:layout_below="@+id/enterURL"
+        android:layout_below="@+id/enterLogin"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="@dimen/margin_top_enter_field"
+        android:layout_marginEnd="16dp"
+        android:inputType="textPassword"
+        android:autofillHints="password"
         android:hint="@string/enter_password"
-        android:autofillHints="" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/enterURL"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_enter_field"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:layout_below="@+id/enterDescription"
+        android:layout_below="@+id/enterPassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="@dimen/margin_top_enter_field"
+        android:layout_marginEnd="16dp"
+        android:inputType="textUri"
+        android:autofillHints="webDomainName"
         android:hint="@string/enter_url"
-        android:autofillHints="" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/enterDescription"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_enter_field"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:layout_below="@+id/enterLogin"
+        android:layout_below="@+id/enterURL"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="@dimen/margin_top_enter_field"
+        android:layout_marginEnd="16dp"
+        android:inputType="text"
+        android:autofillHints="text"
         android:hint="@string/enter_description"
-        android:autofillHints="" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <Button
         android:id="@+id/buttonAddWebsite"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_create_website_button"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:layout_below="@+id/enterPassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="380dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="20dp"
-        android:text="@string/add_website" />
+        android:text="@string/add_website"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 </RelativeLayout>

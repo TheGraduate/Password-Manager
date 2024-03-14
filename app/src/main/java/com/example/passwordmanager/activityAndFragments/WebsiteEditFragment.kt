@@ -1,9 +1,11 @@
 package com.example.passwordmanager.activityAndFragments
 
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -49,15 +51,29 @@ class WebsiteEditFragment: Fragment() {
         binding.editWebsiteURL.setText(website.url)
         binding.editWebsiteDescription.setText(website.description)
 
+        binding.showEditPasswordCheckBox.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                binding.editWebsitePassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                binding.editWebsitePassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+        }
+
         binding.buttonEditWebsite.setOnClickListener {
-            viewModel.changeWebsiteName(binding.editsWebsiteName.text.toString())
-            viewModel.changeLogin(binding.editWebsiteLogin.text.toString())
-            viewModel.changePassword(binding.editWebsitePassword.text.toString())
-            viewModel.changeURL(binding.editWebsiteURL.text.toString())
-            viewModel.changeDescription(binding.editWebsiteDescription.text.toString())
-            viewModel.save()
-            AndroidUtils.hideKeyboard(requireView())
-            findNavController().navigateUp()
+            if (binding.editsWebsiteName.text.isNotEmpty() && binding.editWebsiteLogin.text.isNotEmpty() && binding.editWebsitePassword.text.isNotEmpty()
+                && binding.editWebsiteURL.text.isNotEmpty()
+            ) {
+                viewModel.changeWebsiteName(binding.editsWebsiteName.text.toString())
+                viewModel.changeLogin(binding.editWebsiteLogin.text.toString())
+                viewModel.changePassword(binding.editWebsitePassword.text.toString())
+                viewModel.changeURL(binding.editWebsiteURL.text.toString())
+                viewModel.changeDescription(binding.editWebsiteDescription.text.toString())
+                viewModel.save()
+                AndroidUtils.hideKeyboard(requireView())
+                findNavController().navigateUp()
+            } else {
+                Toast.makeText(requireContext(), "Fields: website name, login, password, url - can not be empty  ", Toast.LENGTH_LONG).show()
+            }
         }
 
         return binding.root

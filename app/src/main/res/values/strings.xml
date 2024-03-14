@@ -29,7 +29,16 @@
     <string name="use_your_fingerprint_to_log_in">Use your fingerprint to log in</string>
     <string name="biometric_dialog_cancel">Cancel</string>
     <string name="log_in_by_biometrically_button_text">Log in by fingerprint</string>
-    <string name="log_in_by_pass_button_text">Log in by password</string>
 
+    <string name="log_in_by_pass_button_text">Log in by password</string>
+    <string name="enter_the_pass_title">Enter the password:</string>
+    <string name="pass_hint">Password</string>
+    <string name="confirm_the_pass_button_text">Confirm</string>
+
+    <string name="edit_website_name">website name</string>
+    <string name="edit_website_login">website login</string>
+    <string name="edit_website_pass">website pass</string>
+    <string name="edit_website_url">website url</string>
+    <string name="edit_website_description">website description</string>
 
 </resources>

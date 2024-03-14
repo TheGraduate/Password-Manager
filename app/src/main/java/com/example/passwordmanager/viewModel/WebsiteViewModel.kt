@@ -1,8 +1,6 @@
 package com.example.passwordmanager.viewModel
 
 import android.app.Application
-import android.content.Context
-import android.util.Base64
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.passwordmanager.crypto.EncryptionManager
@@ -18,19 +16,7 @@ private val empty = Website(
     dateOfAdding = "",
     description = "",
     url = "",
-    //iconURL = "",//todo delete
 )
-
-/*val sharedPreferences1 = context?.getSharedPreferences("my_prefs2", Context.MODE_PRIVATE)
-val editor = sharedPreferences1?.edit()
-val myString = binding.text.text.toString()
-val encryptedData = encryptionManager.encryptData(myString.toByteArray(Charsets.UTF_8))
-editor?.putString("my_key2", Base64.encodeToString(encryptedData, Base64.DEFAULT))
-editor?.apply()
-val myString2 = sharedPreferences1?.getString("my_key2", "")
-val encryptedDataFromSharedPrefs = Base64.decode(myString2, Base64.DEFAULT)
-val decryptedData = encryptedDataFromSharedPrefs?.let { encryptionManager.decryptData(it) }
-binding.text.text = decryptedData?.toString(Charsets.UTF_8)*/
 
 class WebsiteViewModel(application: Application) : AndroidViewModel(application) {
     private val encryptionManager = EncryptionManager()

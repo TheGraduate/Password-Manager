@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
-
-   <!-- Your Website Details UI Elements -->
-
-   <!-- Bottom Action Buttons -->
 
    <Button
        android:id="@+id/buttonEditWebsite"
@@ -30,15 +25,13 @@
    <EditText
        android:id="@+id/editsWebsiteName"
        android:layout_width="0dp"
-       android:layout_height="wrap_content"
+       android:layout_height="@dimen/height_enter_field"
        android:layout_marginTop="4dp"
        android:ems="10"
-
        android:inputType="text"
        android:text=""
        android:autofillHints="text"
-       android:hint="text"
-
+       android:hint="@string/edit_website_name"
        android:textColor="@color/white"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="1.0"
@@ -48,31 +41,41 @@
    <EditText
        android:id="@+id/editWebsiteLogin"
        android:layout_width="0dp"
-       android:layout_height="wrap_content"
+       android:layout_height="@dimen/height_enter_field"
        android:layout_marginTop="4dp"
-
-       android:autofillHints="text"
+       android:autofillHints="emailAddress"
        android:ems="10"
-       android:hint="text"
+       android:hint="@string/edit_website_login"
        android:inputType="text"
-
        android:text=""
        android:textColor="@color/white"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@+id/WebsiteLoginTitle" />
 
+   <CheckBox
+       android:id="@+id/showEditPasswordCheckBox"
+       android:layout_width="60dp"
+       android:layout_height="60dp"
+       android:layout_alignParentStart="true"
+       android:layout_alignParentEnd="true"
+       android:layout_marginEnd="8dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="1.0"
+       app:layout_constraintStart_toStartOf="@+id/WebsitePasswordTitle"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.317" />
+
    <EditText
        android:id="@+id/editWebsitePassword"
        android:layout_width="0dp"
-       android:layout_height="wrap_content"
+       android:layout_height="@dimen/height_enter_field"
        android:layout_marginTop="4dp"
-
-       android:autofillHints="text"
+       android:autofillHints="password"
        android:ems="10"
-       android:hint="text"
-       android:inputType="text"
-
+       android:hint="@string/edit_website_pass"
+       android:inputType="textPassword"
        android:text=""
        android:textColor="@color/white"
        app:layout_constraintEnd_toEndOf="parent"
@@ -83,15 +86,13 @@
    <EditText
        android:id="@+id/editWebsiteURL"
        android:layout_width="0dp"
-       android:layout_height="wrap_content"
+       android:layout_height="@dimen/height_enter_field"
        android:layout_marginTop="4dp"
-
        android:autoLink="web"
-       android:autofillHints="text"
+       android:autofillHints="webDomainName"
        android:ems="10"
-       android:hint="text"
-
-       android:inputType="text"
+       android:hint="@string/edit_website_url"
+       android:inputType="textUri"
        android:text=""
        android:textColor="@color/white"
        app:layout_constraintEnd_toEndOf="parent"
@@ -102,14 +103,12 @@
    <EditText
        android:id="@+id/editWebsiteDescription"
        android:layout_width="0dp"
-       android:layout_height="wrap_content"
+       android:layout_height="@dimen/height_enter_field"
        android:layout_marginTop="4dp"
-
        android:autofillHints="text"
        android:ems="10"
-       android:hint="text"
+       android:hint="@string/edit_website_description"
        android:inputType="text"
-
        android:text=""
        android:textColor="@color/white"
        app:layout_constraintEnd_toEndOf="parent"
@@ -122,8 +121,9 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="Website"
+       android:text="@string/website_title"
        android:textColor="@color/white"
+       android:textSize="@dimen/text_size_title"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent" />
@@ -133,7 +133,8 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="Login"
+       android:text="@string/login_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
@@ -144,7 +145,8 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="Password"
+       android:text="@string/password_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.0"
@@ -156,7 +158,8 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="URL"
+       android:text="@string/url_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.0"
@@ -168,12 +171,12 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="Description"
+       android:text="@string/description_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.0"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@+id/editWebsiteURL" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
