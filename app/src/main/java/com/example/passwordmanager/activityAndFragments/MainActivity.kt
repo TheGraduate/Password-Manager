@@ -1,13 +1,12 @@
 package com.example.passwordmanager.activityAndFragments
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import android.view.Menu
-import android.view.MenuItem
-import androidx.navigation.fragment.NavHostFragment
 import com.example.passwordmanager.R
 import com.example.passwordmanager.databinding.ActivityMainBinding
 
@@ -18,25 +17,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //val actionBar = supportActionBar////
-        //actionBar?.setDisplayShowTitleEnabled(true)///
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.includeCustomToolbar.toolbar)
 
-
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         appBarConfiguration = AppBarConfiguration(navController.graph)
     }
-
-  /*  override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.options_for_website_card, menu)
-
-        return true
-    }*/
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
@@ -46,8 +35,6 @@ class MainActivity : AppCompatActivity() {
                 findNavController(R.id.nav_host_fragment).navigateUp()
                 return true
             }
-            //R.id.edit -> true
-            //R.id.remove -> true
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -64,6 +51,5 @@ class MainActivity : AppCompatActivity() {
         actionBar?.setDisplayHomeAsUpEnabled(false)
         super.onBackPressed()
     }
-
 
 }

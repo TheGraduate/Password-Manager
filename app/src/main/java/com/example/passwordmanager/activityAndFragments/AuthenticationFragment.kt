@@ -16,15 +16,23 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.passwordmanager.R
-import com.example.passwordmanager.databinding.FragmentWebsiteListBinding
 
 class AuthenticationFragment : Fragment() {
 
     private lateinit var biometricPrompt: BiometricPrompt
     private lateinit var promptInfo: BiometricPrompt.PromptInfo
-    private var firstTimeLogin = true
+    private var firstTimeLogin: Boolean
+        get() {
+            val sharedPreferences = requireContext().getSharedPreferences("first_time_login_prefs", Context.MODE_PRIVATE)
+            return sharedPreferences.getBoolean("first_time_login", true)
+        }
+        set(value) {
+            val sharedPreferences = requireContext().getSharedPreferences("first_time_login_prefs", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.putBoolean("first_time_login", value)
+            editor.apply()
+        }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.authentication_fragment, container, false)
@@ -32,6 +40,8 @@ class AuthenticationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        firstTimeLogin = firstTimeLogin
 
         val enterByPassButton = view.findViewById<Button>(R.id.enterByPasswordButton)
         val enterByFingerprintButton = view.findViewById<Button>(R.id.enterByFingerprintButton)
@@ -66,28 +76,27 @@ class AuthenticationFragment : Fragment() {
             if (firstTimeLogin) {
                 savePassword(passwordInput)
                 firstTimeLogin = false
-                showToast("Password saved")
+                showToast(getString(R.string.password_saved))
                 navigateToMainScreen()
             } else {
                 if (passwordInput == savedPassword) {
                     navigateToMainScreen()
                 } else {
-                    showToast("Wrong password")
+                    showToast(getString(R.string.password_wrong))
                 }
             }
-
             dialog.dismiss()
         }
         dialog.show()
     }
 
     private fun getSavedPassword(): String? {
-        val sharedPreferences = requireContext().getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+        val sharedPreferences = requireContext().getSharedPreferences("password_prefs", Context.MODE_PRIVATE)
         return sharedPreferences.getString("password", null)
     }
 
     private fun savePassword(password: String) {
-        val sharedPreferences = requireContext().getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+        val sharedPreferences = requireContext().getSharedPreferences("password_prefs", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putString("password", password)
         editor.apply()
@@ -127,14 +136,14 @@ class AuthenticationFragment : Fragment() {
 
                 override fun onAuthenticationFailed() {
                     super.onAuthenticationFailed()
-                    showToast("Do not recognize fingerprint")
+                    showToast(getString(R.string.do_not_recognize_fingerprint))
                 }
             })
 
         promptInfo = BiometricPrompt.PromptInfo.Builder()
-            .setTitle("Log in to the app")
-            .setSubtitle("Use your fingerprint to log in")
-            .setNegativeButtonText("Cancel")
+            .setTitle(getString(R.string.log_in_to_the_app_biometrically))
+            .setSubtitle(getString(R.string.use_your_fingerprint_to_log_in))
+            .setNegativeButtonText(getString(R.string.biometric_dialog_cancel))
             .build()
     }
 

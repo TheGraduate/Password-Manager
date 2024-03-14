@@ -8,16 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.passwordmanager.util.AndroidUtils
-import com.example.passwordmanager.util.StringArg
 import com.example.passwordmanager.viewModel.WebsiteViewModel
 
 import com.example.passwordmanager.databinding.FragmentWebsiteCreateBinding
 
 class WebsiteCreateFragment : Fragment() {
-
-    companion object {
-        var Bundle.textArg: String? by StringArg
-    }
 
     private val viewModel: WebsiteViewModel by viewModels(
         ownerProducer = ::requireParentFragment
@@ -25,7 +20,6 @@ class WebsiteCreateFragment : Fragment() {
 
     private var _binding: FragmentWebsiteCreateBinding? = null
     private val binding get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,20 +39,14 @@ class WebsiteCreateFragment : Fragment() {
             viewModel.save()
             AndroidUtils.hideKeyboard(requireView())
             findNavController().navigateUp()
-
-
             actionBar?.setDisplayHomeAsUpEnabled(false)
-            //val actionBar = (requireActivity() as AppCompatActivity).supportActionBar
-            //actionBar?.setDisplayHomeAsUpEnabled(false)
         }
 
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
 
 }
