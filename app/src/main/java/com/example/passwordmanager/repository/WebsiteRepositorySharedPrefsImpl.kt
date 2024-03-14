@@ -18,7 +18,7 @@ class WebsiteRepositorySharedPrefsImpl(
     private val prefs = context.getSharedPreferences("rep", Context.MODE_PRIVATE)
     private val type = TypeToken.getParameterized(List::class.java, Website::class.java).type
     private val key = "websites"
-    private var nextId = 0L
+    private var nextId = 1L
     private var websites = emptyList<Website>()
     private val data = MutableLiveData(websites)
 
