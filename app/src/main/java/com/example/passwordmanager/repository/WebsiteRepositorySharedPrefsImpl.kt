@@ -17,34 +17,32 @@ class WebsiteRepositorySharedPrefsImpl(
     private val gson = Gson()
     private val prefs = context.getSharedPreferences("rep", Context.MODE_PRIVATE)
     private val type = TypeToken.getParameterized(List::class.java, Website::class.java).type
-    private val key = "posts"
+    private val key = "websites"
     private var nextId = 0L
     private var websites = emptyList<Website>()
     private val data = MutableLiveData(websites)
 
-
-    /*init {
+    init {
         prefs.getString(key, null)?.let { json ->
-            websites = gson.fromJson<List<Website>>(json, type).map { website ->
-                website.copy(password = encryptionManager.decryptData(Base64.decode(website.password, Base64.DEFAULT)).toString(Charsets.UTF_8))
+            websites = gson.fromJson<List<Website>>(json, type)
+            if (websites.isNotEmpty()) {
+                websites = websites.map { website ->
+                    website.copy(password = encryptionManager.decryptData(Base64.decode(website.password, Base64.DEFAULT)).toString(Charsets.UTF_8))
+                }
             }
             nextId = websites.maxByOrNull { it.id }?.id?.plus(1) ?: 1L
             data.value = websites
         }
-    }*/
+    }
 
     override fun getAll(): LiveData<List<Website>> = data
 
     override fun save(website: Website) {
-        val encryptedPassword = encryptionManager.encryptData(website.password.toByteArray(Charsets.UTF_8))
-        //val encodedPassword = Base64.encodeToString(encryptedPassword, Base64.DEFAULT)//
-
         if (website.id == 0L) {
             websites = listOf(
                 website.copy(
                     id = nextId++,
                     dateOfAdding = "now",
-                    password = Base64.encodeToString(encryptedPassword, Base64.DEFAULT)
                 )
             ) + websites
             data.value = websites
@@ -71,10 +69,15 @@ class WebsiteRepositorySharedPrefsImpl(
         sync()
     }
 
-    private fun sync() {
-        with(prefs.edit()) {
-            putString(key, gson.toJson(websites))
-            apply()
-        }
-    }
+   private fun sync() {
+       val encryptedWebsites = websites.map { website ->
+               val encryptedPassword = encryptionManager.encryptData(website.password.toByteArray(Charsets.UTF_8))
+               website.copy(password = Base64.encodeToString(encryptedPassword, Base64.DEFAULT))
+       }
+       with(prefs.edit()) {
+           putString(key, gson.toJson(encryptedWebsites))
+           apply()
+       }
+   }
+
 }
