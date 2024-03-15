@@ -3,11 +3,11 @@
     <string name="app_name">Password Manager</string>
    <!-- <string name="action_settings">Settings</string>-->
 
-    <string name="enter_website_name">введите имя сайта</string>
-    <string name="enter_login">введите логин</string>
-    <string name="enter_password">введите пароль</string>
-    <string name="enter_url">введите URL</string>
-    <string name="enter_description">введите описание</string>
+    <string name="enter_website_name">Введите имя сайта</string>
+    <string name="enter_login">Введите логин</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="enter_url">Введите URL</string>
+    <string name="enter_description">Введите описание</string>
     <string name="add_website">Добавить сайт</string>
 
     <string name="menu_edit">Редактировать</string>
@@ -37,10 +37,10 @@
     <string name="pass_hint">Пароль</string>
     <string name="confirm_the_pass_button_text">Подтвердить</string>
 
-    <string name="edit_website_name">название</string>
-    <string name="edit_website_login">логин</string>
-    <string name="edit_website_pass">пароль</string>
-    <string name="edit_website_url">url</string>
-    <string name="edit_website_description">описание</string>
+    <string name="edit_website_name">Название</string>
+    <string name="edit_website_login">Логин</string>
+    <string name="edit_website_pass">Пароль</string>
+    <string name="edit_website_url">URL</string>
+    <string name="edit_website_description">Описание</string>
 
 </resources>

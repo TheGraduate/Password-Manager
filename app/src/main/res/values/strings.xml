@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Password Manager</string>
 
-    <string name="enter_website_name">enter website name</string>
-    <string name="enter_login">enter login</string>
-    <string name="enter_password">enter password</string>
-    <string name="enter_url">enter URL</string>
-    <string name="enter_description">enter description</string>
+    <string name="enter_website_name">Enter website name</string>
+    <string name="enter_login">Enter login</string>
+    <string name="enter_password">Enter password</string>
+    <string name="enter_url">Enter URL</string>
+    <string name="enter_description">Enter description</string>
     <string name="add_website">Add Website</string>
 
     <string name="menu_edit">Edit</string>
@@ -35,10 +35,10 @@
     <string name="pass_hint">Password</string>
     <string name="confirm_the_pass_button_text">Confirm</string>
 
-    <string name="edit_website_name">website name</string>
-    <string name="edit_website_login">website login</string>
-    <string name="edit_website_pass">website pass</string>
-    <string name="edit_website_url">website url</string>
-    <string name="edit_website_description">website description</string>
+    <string name="edit_website_name">Website name</string>
+    <string name="edit_website_login">Website login</string>
+    <string name="edit_website_pass">Website pass</string>
+    <string name="edit_website_url">Website URL</string>
+    <string name="edit_website_description">Website description</string>
 
 </resources>

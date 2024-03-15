@@ -59,19 +59,20 @@
        android:layout_height="60dp"
        android:layout_alignParentStart="true"
        android:layout_alignParentEnd="true"
-       android:layout_marginEnd="8dp"
-       app:layout_constraintBottom_toBottomOf="parent"
+       android:padding="60dp"
+       app:layout_constraintBottom_toBottomOf="@+id/editWebsitePassword"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="1.0"
        app:layout_constraintStart_toStartOf="@+id/WebsitePasswordTitle"
        app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintVertical_bias="0.317" />
+       app:layout_constraintVertical_bias="1.0" />
 
    <EditText
        android:id="@+id/editWebsitePassword"
        android:layout_width="0dp"
-       android:layout_height="@dimen/height_enter_field"
+       android:layout_height="49dp"
        android:layout_marginTop="4dp"
+       android:layout_marginEnd="54dp"
        android:autofillHints="password"
        android:ems="10"
        android:hint="@string/edit_website_pass"
