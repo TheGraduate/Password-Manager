@@ -84,8 +84,6 @@ class WebsiteFragment: Fragment() {
             Toast.makeText(context, getString(R.string.password_copied_to_clipboard), Toast.LENGTH_SHORT).show()
         }
 
-        binding.dateOfAdding.text = viewModel.data.value?.find { it.id == args.id }?.dateOfAdding?.toString()?: ""
-
         binding.webViewContainer.visibility = View.INVISIBLE
         webView = WebView(requireContext())
         webView.settings.javaScriptEnabled = true
@@ -104,6 +102,7 @@ class WebsiteFragment: Fragment() {
         val toolbar = activity?.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         (activity as? AppCompatActivity)?.setSupportActionBar(toolbar)
         val actionBar = (activity as? AppCompatActivity)?.supportActionBar
+        actionBar?.setDisplayShowTitleEnabled(false)
         actionBar?.setDisplayHomeAsUpEnabled(true)
         toolbar?.inflateMenu(R.menu.options_for_website_card)
     }

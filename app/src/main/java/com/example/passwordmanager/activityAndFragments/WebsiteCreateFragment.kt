@@ -31,6 +31,7 @@ class WebsiteCreateFragment : Fragment() {
         _binding = FragmentWebsiteCreateBinding.inflate(inflater, container, false)
 
         val actionBar = (requireActivity() as MainActivity).supportActionBar
+        actionBar?.setDisplayShowTitleEnabled(false)
 
         binding.showPasswordCheckBox.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
@@ -63,6 +64,8 @@ class WebsiteCreateFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
     }
 
 }

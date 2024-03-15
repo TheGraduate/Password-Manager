@@ -14,8 +14,8 @@
        android:layout_marginEnd="16dp"
        android:layout_marginBottom="7dp"
        android:background="@android:color/transparent"
-       android:src="@drawable/ic_more_vert_24"
-       app:icon="@drawable/ic_more_vert_24"
+       android:src="@drawable/website_menu_button_image"
+       app:icon="@drawable/website_menu_button_image"
        app:layout_constraintBottom_toTopOf="@+id/WebsiteNameTitle"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintTop_toTopOf="parent" />
@@ -162,6 +162,17 @@
        app:layout_constraintStart_toStartOf="@+id/UsersWebsiteURL"
        app:layout_constraintTop_toBottomOf="@+id/UsersWebsiteURL" />
 
+   <TextView
+       android:id="@+id/dateOfAdding"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="8dp"
+       android:layout_marginTop="8dp"
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/WebsiteNameTitle"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
    <androidx.constraintlayout.widget.Group
        android:id="@+id/group"
        android:layout_width="409dp"
@@ -176,12 +187,14 @@
        android:id="@+id/buttonCopyPassword"
        android:layout_width="120dp"
        android:layout_height="64dp"
+       android:layout_marginStart="8dp"
        android:layout_marginEnd="16dp"
        android:layout_marginBottom="32dp"
        android:text="@string/copy_password_button_text"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_weight="1" />
+       app:layout_constraintHorizontal_weight="1"
+       app:layout_constraintStart_toEndOf="@+id/buttonAutofill" />
 
    <Button
        android:id="@+id/buttonCopyLogin"
@@ -200,11 +213,11 @@
        android:id="@+id/buttonAutofill"
        android:layout_width="120dp"
        android:layout_height="64dp"
-       android:layout_marginEnd="8dp"
        android:layout_marginBottom="32dp"
        android:text="@string/to_website"
        app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toStartOf="@+id/buttonCopyPassword" />
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent" />
 
    <FrameLayout
        android:id="@+id/webViewContainer"
@@ -222,15 +235,5 @@
           android:layout_height="match_parent" />
 
    </FrameLayout>
-
-   <TextView
-       android:id="@+id/dateOfAdding"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginStart="16dp"
-       android:layout_marginTop="8dp"
-       app:layout_constraintBottom_toTopOf="@+id/WebsiteNameTitle"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

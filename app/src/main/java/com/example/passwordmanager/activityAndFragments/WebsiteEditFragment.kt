@@ -69,6 +69,7 @@ class WebsiteEditFragment: Fragment() {
                 viewModel.changeURL(binding.editWebsiteURL.text.toString())
                 viewModel.changeDescription(binding.editWebsiteDescription.text.toString())
                 viewModel.save()
+
                 AndroidUtils.hideKeyboard(requireView())
                 findNavController().navigateUp()
             } else {
@@ -83,7 +84,10 @@ class WebsiteEditFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val toolbar = activity?.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        val actionBar = (activity as? AppCompatActivity)?.supportActionBar
         (activity as? AppCompatActivity)?.setSupportActionBar(toolbar)
+
+        actionBar?.setDisplayShowTitleEnabled(false)
         toolbar?.inflateMenu(R.menu.options_for_website_card)
         val navController = findNavController()
         toolbar?.setNavigationOnClickListener {

@@ -37,7 +37,7 @@ class WebsiteListFragment() : Fragment() {
         val actionBar = (activity as? AppCompatActivity)?.supportActionBar
         _binding = FragmentWebsiteListBinding.inflate(inflater, container, false)
 
-        binding.fab.setOnClickListener {
+        binding.createNewWebsiteButton.setOnClickListener {
             actionBar?.setDisplayHomeAsUpEnabled(true)
             findNavController().navigate(R.id.action_websiteListFragment_to_websiteCreateFragment)
         }

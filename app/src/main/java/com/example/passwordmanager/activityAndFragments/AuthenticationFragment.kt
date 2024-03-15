@@ -93,14 +93,14 @@ class AuthenticationFragment : Fragment() {
         dialog.show()
     }
 
-    private fun getSavedPassword(): String? {
+    fun getSavedPassword(): String? {
         val sharedPreferences = requireContext().getSharedPreferences("password_prefs", Context.MODE_PRIVATE)
         val encryptedDataFromSharedPrefs = Base64.decode(sharedPreferences.getString("password", null), Base64.DEFAULT)
         val decryptedData = encryptedDataFromSharedPrefs?.let { encryptionManager.decryptData(it) }
         return decryptedData?.toString(Charsets.UTF_8)
     }
 
-    private fun savePassword(password: String) {
+    fun savePassword(password: String) {
         val sharedPreferences = requireContext().getSharedPreferences("password_prefs", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         val encryptedDataToSharedPrefs = encryptionManager.encryptData(password.toByteArray(Charsets.UTF_8))

@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="toolbarFontColor">#0040FF</color>
     <color name="background">#22242C</color>
+    <color name="dark_grey">#191A1C</color>
 </resources>

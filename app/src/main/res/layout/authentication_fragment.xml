@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/background"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
    <Button
        android:id="@+id/enterByFingerprintButton"
-       android:layout_width="187dp"
-       android:layout_height="52dp"
-       android:layout_marginTop="64dp"
-       android:layout_marginEnd="16dp"
-       android:text="@string/log_in_by_biometrically_button_text"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
+       android:layout_width="match_parent"
+       android:layout_height="88dp"
+       android:layout_gravity="center_vertical"
+       android:layout_marginBottom="15dp"
+
+       android:text="@string/log_in_by_biometrically_button_text" />
 
    <Button
        android:id="@+id/enterByPasswordButton"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginStart="16dp"
-       android:layout_marginTop="64dp"
-       android:text="@string/log_in_by_pass_button_text"
-       app:layout_constraintEnd_toStartOf="@+id/enterByFingerprintButton"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
+       android:layout_width="match_parent"
+       android:layout_height="88dp"
+       android:layout_gravity="center_vertical"
+       android:layout_marginBottom="250dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+       android:text="@string/log_in_by_pass_button_text" />
+
+</LinearLayout>

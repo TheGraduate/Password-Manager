@@ -95,7 +95,7 @@ class WebsiteAdapter(
                             Glide.with(binding.iconImageWebsite)
                                 .setDefaultRequestOptions(requestOptions)
                                 .load(it)
-                                .placeholder(R.drawable.icon_site_placeholder)
+                                .placeholder(R.drawable.placeholer_website_icon_image)
                                 .error(R.drawable.icon_site_error)
                                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                                 .signature(ObjectKey(website.url))
