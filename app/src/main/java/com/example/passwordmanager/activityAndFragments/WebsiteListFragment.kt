@@ -16,7 +16,7 @@ import com.example.passwordmanager.adapter.WebsiteAdapter
 import com.example.passwordmanager.viewModel.WebsiteViewModel
 import com.example.passwordmanager.databinding.FragmentWebsiteListBinding
 
-class WebsiteListFragment () : Fragment() {
+class WebsiteListFragment() : Fragment() {
 
     private val viewModel: WebsiteViewModel by viewModels(
         ownerProducer = ::requireParentFragment

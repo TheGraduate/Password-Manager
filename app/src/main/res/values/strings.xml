@@ -41,4 +41,8 @@
     <string name="edit_website_url">Website URL</string>
     <string name="edit_website_description">Website description</string>
 
+    <string name="copy_password_button_text">Copy Password</string>
+    <string name="copy_login_button_text">Copy Login</string>
+    <string name="to_website">To website</string>
+
 </resources>

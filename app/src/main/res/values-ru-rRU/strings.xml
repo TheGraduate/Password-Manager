@@ -42,5 +42,8 @@
     <string name="edit_website_pass">Пароль</string>
     <string name="edit_website_url">URL</string>
     <string name="edit_website_description">Описание</string>
+    <string name="copy_password_button_text">Скопировать пароль</string>
+    <string name="copy_login_button_text">Скопировать логин</string>
+    <string name="to_website">Перейти на сайт</string>
 
 </resources>

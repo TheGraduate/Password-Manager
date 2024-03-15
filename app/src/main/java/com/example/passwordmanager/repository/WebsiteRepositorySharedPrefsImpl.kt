@@ -9,6 +9,8 @@ import com.example.passwordmanager.dto.Website
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class WebsiteRepositorySharedPrefsImpl(
     context: Context,
@@ -38,11 +40,13 @@ class WebsiteRepositorySharedPrefsImpl(
     override fun getAll(): LiveData<List<Website>> = data
 
     override fun save(website: Website) {
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        val currentDate = LocalDateTime.now().format(formatter)
         if (website.id == 0L) {
             websites = listOf(
                 website.copy(
                     id = nextId++,
-                    dateOfAdding = "now",
+                    dateOfAdding = currentDate,
                 )
             ) + websites
             data.value = websites
@@ -55,6 +59,7 @@ class WebsiteRepositorySharedPrefsImpl(
                 name = website.name,
                 login = website.login,
                 password = website.password,
+                dateOfAdding = currentDate,
                 url = website.url,
                 description = website.description
             )
