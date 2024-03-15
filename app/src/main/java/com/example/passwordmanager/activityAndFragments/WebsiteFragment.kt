@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -27,6 +28,9 @@ class WebsiteFragment: Fragment() {
     )
 
     private val args by navArgs<WebsiteFragmentArgs>()
+
+    private lateinit var webView: WebView
+    private lateinit var autoFillWebViewHelper: AutoFillWebViewHelper
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -80,12 +84,23 @@ class WebsiteFragment: Fragment() {
             Toast.makeText(context, getString(R.string.password_copied_to_clipboard), Toast.LENGTH_SHORT).show()
         }
 
+        binding.dateOfAdding.text = viewModel.data.value?.find { it.id == args.id }?.dateOfAdding?.toString()?: ""
+
+        binding.webViewContainer.visibility = View.INVISIBLE
+        webView = WebView(requireContext())
+        webView.settings.javaScriptEnabled = true
+        webView.settings.domStorageEnabled = true
+        binding.webViewContainer.addView(webView)
+        binding.buttonAutofill.setOnClickListener {
+            binding.webViewContainer.visibility = View.VISIBLE
+            startAutoFillProcess()
+        }
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val toolbar = activity?.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         (activity as? AppCompatActivity)?.setSupportActionBar(toolbar)
         val actionBar = (activity as? AppCompatActivity)?.supportActionBar
@@ -93,4 +108,18 @@ class WebsiteFragment: Fragment() {
         toolbar?.inflateMenu(R.menu.options_for_website_card)
     }
 
+    private fun startAutoFillProcess() {
+        autoFillWebViewHelper = AutoFillWebViewHelper(requireContext(), webView)
+        val websiteUrl = viewModel.data.value?.find { it.id == args.id }?.url
+        if (!websiteUrl.isNullOrEmpty()) {
+            autoFillWebViewHelper.loadUrl(websiteUrl)
+        }
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        webView.apply {
+            stopLoading()
+            destroy()
+        }
+    }
 }
