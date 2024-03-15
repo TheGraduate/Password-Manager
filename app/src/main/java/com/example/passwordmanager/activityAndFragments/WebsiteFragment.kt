@@ -99,6 +99,7 @@ class WebsiteFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val toolbar = activity?.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         (activity as? AppCompatActivity)?.setSupportActionBar(toolbar)
         val actionBar = (activity as? AppCompatActivity)?.supportActionBar
@@ -116,6 +117,8 @@ class WebsiteFragment: Fragment() {
     }
     override fun onDestroyView() {
         super.onDestroyView()
+        val actionBar = (activity as? AppCompatActivity)?.supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(false)
         webView.apply {
             stopLoading()
             destroy()
