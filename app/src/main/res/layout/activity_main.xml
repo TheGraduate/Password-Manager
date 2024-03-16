@@ -7,21 +7,6 @@
     android:fitsSystemWindows="true"
     tools:context=".activityAndFragments.MainActivity">
 
-   <!-- <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#125FAC"
-        android:fitsSystemWindows="true">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#333131"/>
-    </com.google.android.material.appbar.AppBarLayout>-->
-
-
     <include
         android:id="@+id/include_custom_toolbar"
         layout="@layout/custom_toolbar"
@@ -40,6 +25,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include_custom_toolbar"
         app:layout_constraintVertical_bias="0.501" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

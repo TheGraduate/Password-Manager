@@ -3,6 +3,7 @@ package com.example.passwordmanager.viewModel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.example.passwordmanager.crypto.EncryptionManager
 import com.example.passwordmanager.dto.Website
 import com.example.passwordmanager.repository.WebsiteRepository
 import com.example.passwordmanager.repository.WebsiteRepositorySharedPrefsImpl
@@ -15,13 +16,13 @@ private val empty = Website(
     dateOfAdding = "",
     description = "",
     url = "",
-    //iconURL = "",//todo delete
 )
 
 class WebsiteViewModel(application: Application) : AndroidViewModel(application) {
-    private val repository: WebsiteRepository = WebsiteRepositorySharedPrefsImpl(application)
+    private val encryptionManager = EncryptionManager()
+    private val repository: WebsiteRepository = WebsiteRepositorySharedPrefsImpl(application, encryptionManager)
     val data = repository.getAll()
-    private val edited = MutableLiveData(empty)
+    val edited = MutableLiveData(empty)
 
     fun save() {
         edited.value?.let {

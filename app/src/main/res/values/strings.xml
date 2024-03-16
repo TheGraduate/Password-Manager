@@ -1,20 +1,48 @@
 <resources>
     <string name="app_name">Password Manager</string>
-    <string name="action_settings">Settings</string>
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
 
-
-
-    <string name="enter_website_name">enter website name</string>
-    <string name="enter_login">enter login</string>
-    <string name="enter_password">enter password</string>
-    <string name="enter_url">enter URL</string>
-    <string name="enter_description">enter description</string>
+    <string name="enter_website_name">Enter website name</string>
+    <string name="enter_login">Enter login</string>
+    <string name="enter_password">Enter password</string>
+    <string name="enter_url">Enter URL</string>
+    <string name="enter_description">Enter description</string>
     <string name="add_website">Add Website</string>
 
     <string name="menu_edit">Edit</string>
     <string name="menu_remove">Remove</string>
+    <string name="edit_website">Edit website</string>
 
+    <string name="login_copied_to_clipboard">Login copied to clipboard</string>
+    <string name="password_copied_to_clipboard">Password copied to clipboard</string>
+
+    <string name="website_title">Website</string>
+    <string name="login_title">Login</string>
+    <string name="password_title">Password</string>
+    <string name="url_title">URL</string>
+    <string name="description_title">Description</string>
+
+    <string name="password_saved">Password saved</string>
+    <string name="password_wrong">Wrong password</string>
+
+    <string name="do_not_recognize_fingerprint">Do not recognize fingerprint</string>
+    <string name="log_in_to_the_app_biometrically">Log in to the app</string>
+    <string name="use_your_fingerprint_to_log_in">Use your fingerprint to log in</string>
+    <string name="biometric_dialog_cancel">Cancel</string>
+    <string name="log_in_by_biometrically_button_text">Log in by fingerprint</string>
+
+    <string name="log_in_by_pass_button_text">Log in by password</string>
+    <string name="enter_the_pass_title">Enter the password:</string>
+    <string name="pass_hint">Password</string>
+    <string name="confirm_the_pass_button_text">Confirm</string>
+
+    <string name="edit_website_name">Website name</string>
+    <string name="edit_website_login">Website login</string>
+    <string name="edit_website_pass">Website pass</string>
+    <string name="edit_website_url">Website URL</string>
+    <string name="edit_website_description">Website description</string>
+
+    <string name="copy_password_button_text">Copy Password</string>
+    <string name="copy_login_button_text">Copy Login</string>
+    <string name="to_website">To website</string>
 
 </resources>

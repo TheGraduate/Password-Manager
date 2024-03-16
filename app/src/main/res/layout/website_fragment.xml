@@ -6,9 +6,30 @@
     android:layout_height="match_parent"
     android:background="@color/background">
 
-   <!-- Your Website Details UI Elements -->
+   <TextView
+       android:id="@+id/dateOfAdding"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="8dp"
+       android:layout_marginTop="8dp"
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/WebsiteNameTitle"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
 
-   <!-- Bottom Action Buttons -->
+   <com.google.android.material.button.MaterialButton
+       android:id="@+id/iconImageWebsiteMenuOnWebsiteFragment"
+       android:layout_width="60dp"
+       android:layout_height="60dp"
+       android:layout_marginTop="16dp"
+       android:layout_marginEnd="16dp"
+       android:layout_marginBottom="7dp"
+       android:background="@android:color/transparent"
+       android:src="@drawable/website_menu_button_image"
+       app:icon="@drawable/website_menu_button_image"
+       app:layout_constraintBottom_toTopOf="@+id/WebsiteNameTitle"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
 
    <TextView
        android:id="@+id/UsersWebsiteName"
@@ -86,12 +107,14 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginStart="8dp"
+       android:layout_marginTop="54dp"
        android:layout_marginEnd="8dp"
-       android:text="Website"
+       android:text="@string/website_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteName"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintHorizontal_bias="0.0"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
        app:layout_constraintVertical_bias="0.04000002"
@@ -102,7 +125,8 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="Login"
+       android:text="@string/login_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteLogin"
        app:layout_constraintEnd_toEndOf="@+id/UsersWebsiteName"
@@ -115,7 +139,8 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="Password"
+       android:text="@string/password_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintBottom_toTopOf="@+id/UsersWebsitePassword"
        app:layout_constraintEnd_toEndOf="@+id/UsersWebsiteLogin"
@@ -127,7 +152,8 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="URL"
+       android:text="@string/url_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteURL"
        app:layout_constraintEnd_toEndOf="@+id/UsersWebsitePassword"
@@ -139,7 +165,8 @@
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="8dp"
-       android:text="Description"
+       android:text="@string/description_title"
+       android:textSize="@dimen/text_size_title"
        android:textColor="@color/white"
        app:layout_constraintBottom_toTopOf="@+id/UsersWebsiteDescription"
        app:layout_constraintEnd_toEndOf="@+id/UsersWebsiteURL"
@@ -150,7 +177,7 @@
        android:id="@+id/group"
        android:layout_width="409dp"
        android:layout_height="128dp"
-       app:constraint_referenced_ids="buttonCopyPassword,buttonCopyLogin,buttonOpenLink"
+       app:constraint_referenced_ids="buttonCopyPassword,buttonCopyLogin"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.5"
@@ -160,37 +187,53 @@
        android:id="@+id/buttonCopyPassword"
        android:layout_width="120dp"
        android:layout_height="64dp"
-       android:layout_marginEnd="8dp"
+       android:layout_marginStart="9dp"
+       android:layout_marginEnd="16dp"
        android:layout_marginBottom="32dp"
-       android:backgroundTint="@color/toolbarFontColor"
-       android:text="Copy Password"
+       android:text="@string/copy_password_button_text"
        app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toStartOf="@+id/buttonOpenLink"
+       app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_weight="1"
-       app:layout_constraintStart_toEndOf="@id/buttonCopyLogin" />
+       app:layout_constraintStart_toEndOf="@+id/buttonAutofill" />
 
    <Button
        android:id="@+id/buttonCopyLogin"
        android:layout_width="120dp"
        android:layout_height="64dp"
+       android:layout_marginStart="16dp"
        android:layout_marginEnd="8dp"
        android:layout_marginBottom="32dp"
-       android:backgroundTint="@color/toolbarFontColor"
-       android:text="Copy Login"
+       android:text="@string/copy_login_button_text"
        app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toStartOf="@id/buttonCopyPassword"
+       app:layout_constraintEnd_toStartOf="@+id/buttonAutofill"
        app:layout_constraintHorizontal_weight="1"
        app:layout_constraintStart_toStartOf="parent" />
 
    <Button
-       android:id="@+id/buttonOpenLink"
+       android:id="@+id/buttonAutofill"
        android:layout_width="120dp"
        android:layout_height="64dp"
        android:layout_marginBottom="32dp"
-       android:backgroundTint="@color/toolbarFontColor"
-       android:text="Open the website"
+       android:text="@string/to_website"
        app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent" />
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent" />
 
+   <FrameLayout
+       android:id="@+id/webViewContainer"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       tools:visibility="gone">
+
+      <WebView
+          android:id="@+id/webView"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+
+   </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
